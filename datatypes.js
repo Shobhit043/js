@@ -1,6 +1,9 @@
 
 /*
 
+docs of datatypes of primitive
+https://262.ecma-international.org/5.1/index.html#sec-11.4.3
+
 Based on How data stored in the memory and accessed its divided into 2 types
 
 1. Primitive datatypes (These are reference by value)
