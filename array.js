@@ -23,8 +23,10 @@ const myArr2 = new Array(1, 2, 3, 4)
 // console.log(myArr);
 // console.log( newArr);
 
-
-// slice, splice
+/*
+    slice, splice
+    splice includes the final index and also removes those elements form the original array while slice does not
+*/
 
 console.log("A ", myArr);
 
@@ -64,7 +66,9 @@ console.log(real_another_array);
 
 console.log(Array.isArray("Hitesh"))
 console.log(Array.from("Hitesh"))
-console.log(Array.from({name: "hitesh"})) // interesting
+console.log(Array.from({name: "hitesh"})) // return empty array as it can not make array using this object
+// we need to spcify whether we want array of keys or values
+
 
 let score1 = 100
 let score2 = 200
