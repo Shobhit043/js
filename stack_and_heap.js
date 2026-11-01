@@ -1,8 +1,11 @@
 /*
 
     Primitive - Stack (By value)
-    Reference - Heap (By address)
+    string, number, bigint, null, undefined, symbol
+    (These values are immutable, these values are copied by value)
 
+    Reference - Heap (By address)
+    object, array, function, date, map, set
 */
 
 
