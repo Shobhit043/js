@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">
+        fetch data
+    </button>   
+</body>
+<script>
+    // Now fetch is used for api call, this can still be found in legacy code
+    // there are 5 states in this XMLHttpRequest which you can look on documentation
+    document.querySelector("#btn").addEventListener("click", function(e){
+        url = "https://api.github.com/users/shobhit043"
+        const xhr = new XMLHttpRequest(); // creating object of XMLHttpRequest
+        xhr.open("GET", url) // opening the GET request
+        xhr.responseType = "json"
+        // callback function which executes when http request is completed successfully
+        xhr.onload = function (){
+            if (xhr.status === 200){
+                // getting the final response and converting to Object type
+                const response = Object(xhr.response)
+                // 1. Create a new <ul> element
+                const ul = document.createElement('ul')
+                // 2. adding li using the response object
+                ul.innerHTML = Object.entries(response)
+                .map(([key, value]) => `<li><strong>${key}:</strong> ${value}</li>`)
+                .join("");
+                // appending ul to the body
+                document.body.appendChild(ul)
+            }
+            else{
+                console.log("Request faild")
+            }
+        }
+        xhr.send();
+    })
+</script>
+</html>
